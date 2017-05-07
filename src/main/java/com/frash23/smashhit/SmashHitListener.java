@@ -29,7 +29,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import static org.bukkit.Bukkit.getPluginManager;
 
 class SmashHitListener extends PacketAdapter {
-	private SmashHit plugin;
 	private ProtocolManager pmgr;
 	private DamageResolver damageResolver;
 
@@ -42,7 +41,6 @@ class SmashHitListener extends PacketAdapter {
 	SmashHitListener(SmashHit pl, boolean useCrits, boolean oldCrits, int maxCps, double maxDistance) {
 		super(pl, ListenerPriority.HIGH, Collections.singletonList( PacketType.Play.Client.USE_ENTITY) );
 
-		plugin = pl;
 		pmgr = ProtocolLibrary.getProtocolManager();
 
 		damageResolver = DamageResolver.getDamageResolver(useCrits, oldCrits);
